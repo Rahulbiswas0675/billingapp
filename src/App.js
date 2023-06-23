@@ -7,13 +7,13 @@ function App() {
 
   function upload(e) {
     var files = e.target.files;
-    if (files.length == 0) {
+    if (files.length === 0) {
       alert("Please choose any file...");
       return;
     }
     var filename = files[0].name;
     var extension = filename.substring(filename.lastIndexOf(".")).toUpperCase();
-    if (extension == ".XLS" || extension == ".XLSX") {
+    if (extension === ".XLS" || extension === ".XLSX") {
       excelFileToJSON(files[0]);
     } else {
       alert("Please select a valid excel file.");
