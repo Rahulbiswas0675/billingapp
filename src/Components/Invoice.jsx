@@ -33,23 +33,9 @@ function Invoice(props) {
     });
   };
 
-  // const downloadall = () => {
-  //   for (let i = 0; i < props.data.Sheet1.length; i++) {
-  //     if (i !== props.data.Sheet1.length - 1) {
-  //       setId(i);
-  //       setTimeout(() => {
-  //         exportPDF();
-  //       }, 2000);
-  //     }
-  //   }
-  // };
-
   return (
     <>
       <div className="items-div">
-        {/* <button onClick={downloadall} className="button">
-          Export All
-        </button> */}
         {props.data.Sheet1.map((item, index) => (
           <div className="items-container-for-invoice" key={index}>
             <button

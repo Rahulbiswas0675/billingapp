@@ -6,13 +6,13 @@ function App() {
   const [data, setData] = useState(false);
 
   function upload(e) {
-    var files = e.target.files;
+    const files = e.target.files;
     if (files.length === 0) {
       alert("Please choose any file...");
       return;
     }
-    var filename = files[0].name;
-    var extension = filename.substring(filename.lastIndexOf(".")).toUpperCase();
+    const filename = files[0].name;
+    const extension = filename.substring(filename.lastIndexOf(".")).toUpperCase();
     if (extension === ".XLS" || extension === ".XLSX") {
       excelFileToJSON(files[0]);
     } else {
@@ -23,16 +23,16 @@ function App() {
   //Method to read excel file and convert it into JSON
   function excelFileToJSON(file) {
     try {
-      var reader = new FileReader();
+      const reader = new FileReader();
       reader.readAsBinaryString(file);
       reader.onload = function (e) {
-        var data = e.target.result;
-        var workbook = XLSX.read(data, {
+        const data = e.target.result;
+        const workbook = XLSX.read(data, {
           type: "binary",
         });
-        var result = {};
+        const result = {};
         workbook.SheetNames.forEach(function (sheetName) {
-          var roa = XLSX.utils.sheet_to_row_object_array(
+          const roa = XLSX.utils.sheet_to_row_object_array(
             workbook.Sheets[sheetName]
           );
           if (roa.length > 0) {
