@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import logo from "../IMG/NavbarLogo.png";
 import "./Invoice.scss";
 import jsPDF from "jspdf";
